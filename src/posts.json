@@ -1,0 +1,72 @@
+[
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 1,
+    "text": "",
+    "image": "https://mobimg.b-cdn.net/v3/fetch/24/245bb480103b9ddbf9d89cb6e9dd94ee.jpeg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 2,
+    "text": "",
+    "image": "https://natalyland.ru/wp-content/uploads/2/4/5/245fb8bb0eddba60d6a2fab063961c19.jpeg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 3,
+    "text": "",
+    "image": "https://i.pinimg.com/736x/56/f3/a8/56f3a895df026961ee6693d74970a950.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 4,
+    "text": "",
+    "image": "https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/65/23/d8/6523d83e-d71f-5a79-769b-75e3fa3fc38c/193483397337.jpg/1200x1200bf-60.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 5,
+    "text": "",
+    "image": "https://memestatic.fjcdn.com/pictures/Brainlet_1bb827_6684167.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 6,
+    "text": "",
+    "image": "https://i.pinimg.com/originals/d7/94/2f/d7942f09dd19fea8b52ee62a2c430887.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 7,
+    "text": "",
+    "image": "https://www.artists24.net/pictures/user_images/full/362874_xerxes.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 8,
+    "text": "",
+    "image": "https://img2.joyreactor.cc/pics/post/DoNar0217-Pontiff-Sulyvahn-DSIII-%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%B6%D0%B8-4852614.png",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 9,
+    "text": "",
+    "image": "https://i.ytimg.com/vi/5hurJw7vdiY/maxresdefault.jpg",
+    "comments": []
+  },
+  {
+    "user": {"id": 2, "name": "Elena"},
+    "id": 10,
+    "text": "",
+    "image": "https://klike.net/uploads/posts/2022-10/1665552565_3-39.jpg",
+    "comments": []
+  }
+]

@@ -1,0 +1,42 @@
+.post-item {
+  max-width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.post-item__image-wrap {
+  overflow: hidden;
+}
+
+.post-item__image {
+  width: 100%;
+  object-fit: contain;
+  transition: width 500ms ease-out;
+}
+
+.post-item__overlay {
+  position: absolute;
+  top: 0;left: 0;right: 0;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.post-item__user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: translateY(-80px);
+  transition: transform 200ms ease-in-out;
+}
+
+.post-item__user-name {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  margin-right: 10px;
+}
+
+.post-item__overlay:hover .post-item__user {
+  transform: translateY(0);
+}

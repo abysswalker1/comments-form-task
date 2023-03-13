@@ -1,0 +1,12 @@
+.image-grid {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+}
+
+.image-grid__column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}

@@ -1,24 +1,20 @@
-import { PostType } from './../types';
+import { PostType, CommentType } from './../types';
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
+import data from '../posts.json'
 
 const initialState = {
-  currentPost: null as {} | null,
-  postsList: [
-    
-  ] as PostType[] 
+  currentPost: undefined as PostType | undefined,
+  postsList: data as PostType[] 
 }
-
-export type PostsStateType = typeof initialState;
 
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    getCurrentPost: (state, action: PayloadAction<PostType>) => {
-      state.currentPost =  action.payload
-    }
+    
   }
 });
+
 
 export default postsSlice.reducer;

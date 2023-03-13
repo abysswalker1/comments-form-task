@@ -12,6 +12,6 @@ export interface CommentType {
   text: string
 }
 
-export interface PostType extends CommentType {
-  comments: CommentType[]
+export interface PostType extends CommentType{
+  comments: CommentType[] | []
 }
