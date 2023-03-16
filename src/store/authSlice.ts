@@ -12,15 +12,18 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-   setAuthData: (state, action: PayloadAction<UserType>) => {
-      state.user = action.payload;
+   setAuthData: (state, action: PayloadAction<string>) => {
+      state.user = {
+        id: 1,
+        name: action.payload
+      }
    },
-   askForAuth: (state) => {
-    if( state.user.id ) {
-      state.isModal = true;
-    }
+   toggleIsModal: (state, action: PayloadAction<boolean>) => {
+    state.isModal = action.payload;
    }
   }
 });
+
+export const { setAuthData, toggleIsModal } = authSlice.actions;
 
 export default authSlice.reducer;

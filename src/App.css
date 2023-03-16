@@ -1,0 +1,31 @@
+.app {
+  background-color: #778899;
+  position: relative;
+  padding: 10px 0;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Courier Prime', serif;
+} 
+
+.app-title i {
+  color: crimson;
+}
+
+.error-label {
+  font-size: 10px;
+  color: red;
+  margin-bottom: 0;
+}
+
+.input-error {
+  border: 1px solid red;
+  outline: none;
+}
+
+.modal-label {
+  font-size: 14px;
+  margin-bottom: 0;
+}

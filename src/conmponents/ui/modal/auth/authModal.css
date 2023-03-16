@@ -1,0 +1,12 @@
+.auth-modal__form {
+  padding: 20px;
+}
+
+.auth-modal__form input {
+  margin-bottom: 10px;
+}
+
+.auth-modal__skip {
+  text-decoration: none;
+  margin-left: 20px;
+}

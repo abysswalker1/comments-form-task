@@ -1,0 +1,49 @@
+.comment-head {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.comment-head__info {
+  flex: 1;
+}
+
+.comment-name {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.comment-date {
+  font-size: 15px;
+  font-weight: normal;
+  color: gray;
+}
+
+.comment-text {
+  margin-bottom: 5px;
+}
+
+.comment-likes {
+  display: flex;
+  align-items: center;
+}
+
+.comment-likes p {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.comment-likes button {
+  border: none;
+  background: none;
+}
+
+.comment-delite i {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.comment-delite:hover {
+  color: red;
+}

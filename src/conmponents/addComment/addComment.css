@@ -1,0 +1,10 @@
+.add-comment {
+  padding: 0 20px;
+}
+
+.add-comment__date {
+  display: block;
+}
+.add-comment__input-wrap {
+  display: inline-block;
+}

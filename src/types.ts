@@ -8,10 +8,11 @@ export interface CommentType {
   id: number
   user: UserType
   date: string
-  image?: string
   text: string
+  likes: Array<number>
 }
 
 export interface PostType extends CommentType{
-  comments: CommentType[] | []
+  comments: Array<CommentType>
+  image: string
 }

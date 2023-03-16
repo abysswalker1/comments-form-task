@@ -1,0 +1,23 @@
+.profile {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+}
+
+.profile-user {
+  display: flex;
+  align-items: center;
+}
+
+.profile-register {
+  font-size: 20px;
+  color: white;
+}
+
+.profile-user__name {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 0;
+}

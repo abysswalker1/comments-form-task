@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useParams, Link} from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../store/store';
 import './currentPostModal.css'
-import Avatar from '../avatar/Avatar';
+import Avatar from '../../avatar/Avatar';
+import Comment from '../comment/Comment';
+import { setCurrentPost } from '../../../../store/postsSlice';
+import AddComment from '../../../addComment/AddComment';
 
 const CurrentPostModal = () => {
   const { postId = 0 } = useParams();
   const currentPost = useSelector((state: RootState) => {
     return state.posts.postsList.find(item => item.id === +postId)
-  })
+  }) || null;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if( currentPost ){
+      console.log(currentPost?.comments)
+      dispatch(setCurrentPost(currentPost))
+    }
+  },[currentPost])
 
   return (
       <Modal
@@ -32,12 +43,17 @@ const CurrentPostModal = () => {
           <img src={currentPost?.image} className="current-post__image" />
         </div>
 
+        <AddComment postId={currentPost?.id || 0}/>
+
         <div className="current-post__comments">
           <h2 className="current-post__comments-title">Комментарии {currentPost?.comments.length}</h2>
+          <div className="current-post__comments-list">
+            {currentPost?.comments.map((item, index) => <Comment comment={item} index={index}/>)}
+          </div>
         </div>
 
-        <Link to='/'>
-          Close
+        <Link to='/' className='current-post__close'>
+          <i className="bi bi-arrow-left"></i>
         </Link>
       </Modal>
   );
