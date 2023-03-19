@@ -14,10 +14,8 @@ type Props = {
 }
 
 const Comment: React.FC<Props> = ({comment, ...props}) => {
-  const isModal = useSelector((state: RootState) => state.auth.isModal);
   const [yours, setYours] = React.useState(false);
   const auth = useSelector((state: RootState) => state.auth.user);
-  const { user } = comment;
   const [liked, setLiked] = React.useState(false);
   const dispatch = useDispatch(); 
 
@@ -31,21 +29,17 @@ const Comment: React.FC<Props> = ({comment, ...props}) => {
   }, [comment.likes])
 
   useEffect(() => {
-    if(auth === user){
+    if(auth === comment.user){
       setYours(true);
     }
-  }, [user])
-
-  if( isModal ){
-    return <Navigate to={'/auth'}/>
-  }
+  }, [comment])
 
   return (
     <div className='comment'>
       <div className="comment-head">
-        <Avatar image={user.avatar} />
+        <Avatar image={comment.user.avatar} />
         <div className="comment-head__info">
-          <p className="comment-name">{user.name} 
+          <p className="comment-name">{comment.user.name} 
             <span className='comment-date'>{comment.date}</span> 
             {yours && <span className="comment-delite" onClick={() => dispatch(deleteComment(props.index))}><i className="bi bi-trash"></i></span>}
           </p>
@@ -54,7 +48,7 @@ const Comment: React.FC<Props> = ({comment, ...props}) => {
             <p className={(liked ? 'you-liked' : '')}>
               {comment.likes.length}
             </p>
-            <button onClick={() => {
+            <button onClick={(e) => {  
               if( auth.id > 0 ){
                 dispatch(likeComment({commentId: comment.id, likeId: auth.id}))
               } 

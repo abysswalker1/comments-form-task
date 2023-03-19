@@ -8,3 +8,10 @@
 .add-comment__input-wrap {
   display: inline-block;
 }
+
+.add-comment__redirect {
+  margin: 10px;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+}

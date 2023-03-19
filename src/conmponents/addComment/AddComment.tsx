@@ -45,7 +45,7 @@ const AddComment = (props: {postId: number}) => {
                   </div>
                 )}
               </Field>
-              {(auth.id) ? <button type="submit">Submit</button> : <Link to={'/auth'}>Создайте аккаунт</Link>}
+              {(auth.id) ? <button type="submit">Submit</button> : <Link to={'/auth'} className='add-comment__redirect'>Создайте аккаунт</Link>}
             </form>
           )
         }
