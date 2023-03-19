@@ -13,15 +13,18 @@ const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    setCurrentPost: (state, action: PayloadAction<PostType>) => {
-      state.currentPost = action.payload;
+    setCurrentPost: (state, action: PayloadAction<number>) => {
+      state.currentPost = state.postsList.filter(item => item.id === action.payload)[0] || null;
     },
     likeComment: (state, action: PayloadAction<{commentId: number, likeId: number}>) => {
       let neededComment = state.currentPost?.comments.find(item => item.id === action.payload.commentId);
       
       if(  neededComment && !neededComment.likes.find(item => item === action.payload.likeId) ){
-        neededComment.likes.push(action.payload.likeId)
-      } 
+        neededComment.likes.push(action.payload.likeId);
+        
+      } else if( neededComment ){
+        neededComment.likes = neededComment?.likes.filter(item => item !== action.payload.likeId); 
+      }
     },
     addComment: (state, action: PayloadAction<{postId: number, text: string, date: string, author: UserType}>) => {
       const newComment = { 
@@ -31,11 +34,10 @@ const postsSlice = createSlice({
         text: action.payload.text,
         likes: []
       }
-      state.postsList.find(item => item.id === action.payload.postId)?.comments.unshift(newComment);
+      state.currentPost?.comments.unshift(newComment);
     },
     deleteComment: (state, action: PayloadAction<number>) => {
-      if(state.currentPost){
-        console.log(action.payload)
+      if( state.currentPost ){
         state.currentPost?.comments.splice(action.payload, 1);
       }
     }

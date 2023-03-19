@@ -47,3 +47,7 @@
 .comment-delite:hover {
   color: red;
 }
+
+.you-liked > i{
+  color: crimson;
+}

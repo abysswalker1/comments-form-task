@@ -11,17 +11,15 @@ import AddComment from '../../../addComment/AddComment';
 
 const CurrentPostModal = () => {
   const { postId = 0 } = useParams();
-  const currentPost = useSelector((state: RootState) => {
-    return state.posts.postsList.find(item => item.id === +postId)
-  }) || null;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if( currentPost ){
-      console.log(currentPost?.comments)
-      dispatch(setCurrentPost(currentPost))
+    if( postId ){
+      dispatch(setCurrentPost(+postId))
     }
-  },[currentPost])
+  },[postId])
+
+  const currentPost = useSelector((state: RootState) => state.posts.currentPost);
 
   return (
       <Modal

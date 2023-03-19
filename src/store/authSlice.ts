@@ -1,11 +1,12 @@
 import { RootState } from './store';
 import { UserType } from './../types';
 import {createSlice} from '@reduxjs/toolkit';
+import {createSelector} from 'reselect';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
 const initialState = {
   isModal: true,
-  user: { } as UserType,
+  user: {id: 0 } as UserType,
 }
 
 const authSlice = createSlice({
@@ -23,6 +24,9 @@ const authSlice = createSlice({
    }
   }
 });
+
+const authSelector = (state: RootState) => state.auth;
+export const authUserState = createSelector(authSelector, slice => slice.user)
 
 export const { setAuthData, toggleIsModal } = authSlice.actions;
 

@@ -4,7 +4,7 @@
     "id": 1,
     "text": "",
     "image": "https://mobimg.b-cdn.net/v3/fetch/24/245bb480103b9ddbf9d89cb6e9dd94ee.jpeg",
-    "comments": [{"id": 1, "user": {"id": 2, "name": "Elena"}, "date": "17.03.23", "text": "Каеф", "likes": []}]
+    "comments": [{"id": 1, "user": {"id": 2, "name": "Elena"}, "date": "17.03.23", "text": "Каеф", "likes": [3, 38, 140, 23, 34]}]
   },
   {
     "user": {"id": 2, "name": "Elena"},

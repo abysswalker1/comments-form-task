@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useLocation } from 'react-router-dom';
+import { toggleIsModal } from '../../../../store/authSlice';
 import { likeComment, deleteComment } from '../../../../store/postsSlice';
 import { RootState } from '../../../../store/store';
 import { CommentType } from '../../../../types';
@@ -12,16 +14,31 @@ type Props = {
 }
 
 const Comment: React.FC<Props> = ({comment, ...props}) => {
+  const isModal = useSelector((state: RootState) => state.auth.isModal);
   const [yours, setYours] = React.useState(false);
   const auth = useSelector((state: RootState) => state.auth.user);
   const { user } = comment;
+  const [liked, setLiked] = React.useState(false);
   const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    if( comment.likes.includes(auth.id) ) {
+      setLiked(true);
+
+    } else {
+      setLiked(false);
+    }
+  }, [comment.likes])
 
   useEffect(() => {
     if(auth === user){
       setYours(true);
     }
   }, [user])
+
+  if( isModal ){
+    return <Navigate to={'/auth'}/>
+  }
 
   return (
     <div className='comment'>
@@ -34,9 +51,19 @@ const Comment: React.FC<Props> = ({comment, ...props}) => {
           </p>
           <p className="comment-text">{comment.text}</p>
           <div className="comment-likes">
-            <p>{comment.likes.length}</p>
-            <button onClick={() => dispatch(likeComment({commentId: comment.id, likeId: user.id}))}>
-              <i className="bi bi-suit-heart"></i>
+            <p className={(liked ? 'you-liked' : '')}>
+              {comment.likes.length}
+            </p>
+            <button onClick={() => {
+              if( auth.id > 0 ){
+                dispatch(likeComment({commentId: comment.id, likeId: auth.id}))
+              } 
+            }}
+            >
+              { (liked) 
+                  ? <i className="bi bi-suit-heart-fill"></i>
+                  : <i className="bi bi-suit-heart"></i>
+              }
             </button>
           </div>
         </div>
